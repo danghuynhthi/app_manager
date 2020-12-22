@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>fragment_home.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808; font-style: italic;}
+.s1 { color: #174ad4;}
+.s2 { color: #080808;}
+.s3 { color: #067d17;}
+.s4 { color: #0033b3;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fragment_home.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s3">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s3">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s2">&lt;</span><span class="s4">LinearLayout </span><span class="s1">xmlns:android</span><span class="s3">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s3">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s3">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">android:background</span><span class="s3">=&quot;@color/colorPrimary&quot;</span>
+    <span class="s1">android:orientation</span><span class="s3">=&quot;vertical&quot;</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;</span><span class="s4">TextView</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s3">=&quot;Sort by&quot;</span>
+        <span class="s1">android:textAllCaps</span><span class="s3">=&quot;true&quot;</span>
+        <span class="s1">android:fontFamily</span><span class="s3">=&quot;@font/poppins_semibold&quot;</span>
+        <span class="s1">android:textSize</span><span class="s3">=&quot;12sp&quot;</span>
+        <span class="s1">android:layout_gravity</span><span class="s3">=&quot;end&quot;</span>
+        <span class="s1">android:paddingEnd</span><span class="s3">=&quot;16dp&quot;</span>
+        <span class="s1">android:alpha</span><span class="s3">=&quot;0.75&quot;</span>
+        <span class="s1">android:paddingTop</span><span class="s3">=&quot;8dp&quot;</span>
+        <span class="s1">android:paddingBottom</span><span class="s3">=&quot;8dp&quot;</span>
+        <span class="s1">android:drawablePadding</span><span class="s3">=&quot;8dp&quot;</span>
+        <span class="s1">android:textColor</span><span class="s3">=&quot;@android:color/black&quot;</span>
+        <span class="s1">android:drawableStart</span><span class="s3">=&quot;@drawable/ic_sort&quot;</span>
+        <span class="s1">android:paddingStart</span><span class="s3">=&quot;16dp&quot;</span>
+        <span class="s1">android:drawableLeft</span><span class="s3">=&quot;@drawable/ic_sort&quot; </span><span class="s2">/&gt;</span>
+
+    <span class="s2">&lt;</span><span class="s4">androidx.recyclerview.widget.RecyclerView</span>
+        <span class="s1">android:id</span><span class="s3">=&quot;@+id/recycler&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+        <span class="s1">app:layoutManager</span><span class="s3">=&quot;androidx.recyclerview.widget.GridLayoutManager&quot;</span>
+        <span class="s1">app:spanCount</span><span class="s3">=&quot;2&quot;</span>
+        <span class="s1">tools:itemCount</span><span class="s3">=&quot;6&quot;</span>
+        <span class="s1">tools:listitem</span><span class="s3">=&quot;@layout/notes_items&quot; </span><span class="s2">/&gt;</span>
+
+<span class="s2">&lt;/</span><span class="s4">LinearLayout</span><span class="s2">&gt;</span></pre>
+</body>
+</html>

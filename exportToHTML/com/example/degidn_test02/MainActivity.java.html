@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.degidn_test02;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity;</span>
+<span class="s0">import </span><span class="s1">androidx.core.content.res.ResourcesCompat;</span>
+<span class="s0">import </span><span class="s1">androidx.fragment.app.Fragment;</span>
+<span class="s0">import </span><span class="s1">androidx.fragment.app.FragmentTransaction;</span>
+
+<span class="s0">import </span><span class="s1">android.graphics.Typeface;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle;</span>
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater;</span>
+<span class="s0">import </span><span class="s1">android.view.View;</span>
+<span class="s0">import </span><span class="s1">android.view.animation.AccelerateDecelerateInterpolator;</span>
+<span class="s0">import </span><span class="s1">android.view.animation.Animation;</span>
+<span class="s0">import </span><span class="s1">android.view.animation.AnimationUtils;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView;</span>
+
+<span class="s0">import </span><span class="s1">com.google.android.material.tabs.TabLayout;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Objects;</span>
+
+<span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s0">private </span><span class="s1">TabLayout tabLayout;</span>
+    <span class="s0">private </span><span class="s1">View view;</span>
+
+    <span class="s0">private </span><span class="s1">TextView textView,textname;</span>
+    <span class="s0">private </span><span class="s1">ImageView imageView;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState);</span>
+        <span class="s1">setContentView(R.layout.activity_main);</span>
+
+        <span class="s1">tabLayout = findViewById(R.id.tabLayout);</span>
+        <span class="s1">view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.tab_background, </span><span class="s0">null</span><span class="s1">);</span>
+        <span class="s1">textView = view.findViewById(R.id.tv1);</span>
+        <span class="s1">imageView = view.findViewById(R.id.iv1);</span>
+        <span class="s1">textname=view.findViewById(R.id.txtname);</span>
+
+        <span class="s2">//change the font family of text view in tabs(Make sure internet is on, for the first time to prevent crash)</span>
+        <span class="s2">//if(internet is on)</span>
+       <span class="s2">// *Typeface typeface = ResourcesCompat.getFont(getApplication(), R.font.poppins_medium);</span>
+       <span class="s2">//* textView.setTypeface(typeface);</span>
+        <span class="s2">//else</span>
+        <span class="s2">//..default font</span>
+
+
+        <span class="s1">setCustomView(</span><span class="s3">0</span><span class="s1">, </span><span class="s3">1</span><span class="s1">);</span>
+        <span class="s1">setTextAndImageWithAnimation(</span><span class="s4">&quot;HISTORY&quot;</span><span class="s1">, R.drawable.history);</span>
+        <span class="s1">handleFragment(</span><span class="s0">new </span><span class="s1">HomeFragment());</span>
+
+        <span class="s1">tabLayout.addOnTabSelectedListener(</span><span class="s0">new </span><span class="s1">TabLayout.OnTabSelectedListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onTabSelected(TabLayout.Tab tab) {</span>
+                <span class="s0">switch </span><span class="s1">(tab.getPosition()) {</span>
+
+                    <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                        <span class="s1">setCustomView(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">0</span><span class="s1">);</span>
+                        <span class="s1">setTextAndImageWithAnimation(</span><span class="s4">&quot;PROFILE&quot;</span><span class="s1">, R.drawable.ic_categories);</span>
+                        <span class="s2">//change to the fragment which you want to display</span>
+                        <span class="s1">handleFragment(</span><span class="s0">new </span><span class="s1">HomeFragment());</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+
+
+                    <span class="s0">default</span><span class="s1">:</span>
+                        <span class="s1">setCustomView(</span><span class="s3">0</span><span class="s1">, </span><span class="s3">1</span><span class="s1">);</span>
+                        <span class="s1">setTextAndImageWithAnimation(</span><span class="s4">&quot;HISTORY&quot;</span><span class="s1">, R.drawable.history);</span>
+                        <span class="s2">//change to the fragment which you want to display</span>
+                        <span class="s1">handleFragment(</span><span class="s0">new </span><span class="s1">HomeFragment());</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onTabUnselected(TabLayout.Tab tab) {</span>
+
+            <span class="s1">}</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onTabReselected(TabLayout.Tab tab) {</span>
+
+            <span class="s1">}</span>
+        <span class="s1">});</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">setCustomView(</span><span class="s0">int </span><span class="s1">selectedtab, </span><span class="s0">int </span><span class="s1">non1) {</span>
+        <span class="s1">Objects.requireNonNull(tabLayout.getTabAt(selectedtab)).setCustomView(view);</span>
+        <span class="s1">Objects.requireNonNull(tabLayout.getTabAt(non1)).setCustomView(</span><span class="s0">null</span><span class="s1">);</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">setTextAndImageWithAnimation(String text, </span><span class="s0">int </span><span class="s1">images) {</span>
+        <span class="s1">Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);</span>
+        <span class="s1">animation.setInterpolator(</span><span class="s0">new </span><span class="s1">AccelerateDecelerateInterpolator());</span>
+        <span class="s1">textView.setText(text);</span>
+        <span class="s1">imageView.setImageResource(images);</span>
+        <span class="s1">textView.startAnimation(animation);</span>
+        <span class="s1">imageView.startAnimation(animation);</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">handleFragment(Fragment fragment) {</span>
+        <span class="s1">FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();</span>
+        <span class="s1">transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);</span>
+        <span class="s1">transaction.replace(R.id.frameLayout, fragment);</span>
+        <span class="s1">transaction.commit();</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

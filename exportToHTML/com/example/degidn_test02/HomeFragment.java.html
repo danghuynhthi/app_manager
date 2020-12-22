@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>HomeFragment.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #8c8c8c; font-style: italic;}
+.s4 { color: #067d17;}
+.s5 { color: #1750eb;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HomeFragment.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.degidn_test02;</span>
+
+
+<span class="s0">import </span><span class="s1">android.os.Bundle;</span>
+
+<span class="s0">import </span><span class="s1">androidx.fragment.app.Fragment;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.GridLayoutManager;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.LinearLayoutManager;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView;</span>
+
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater;</span>
+<span class="s0">import </span><span class="s1">android.view.View;</span>
+<span class="s0">import </span><span class="s1">android.view.ViewGroup;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList;</span>
+<span class="s0">import </span><span class="s1">java.util.List;</span>
+
+
+<span class="s2">/**</span>
+ <span class="s2">* A simple {</span><span class="s3">@link </span><span class="s2">Fragment} subclass.</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">HomeFragment </span><span class="s0">extends </span><span class="s1">Fragment </span><span class="s0">implements </span><span class="s1">NotesAdapter.OnRecyclerItemClick {</span>
+
+    <span class="s0">private </span><span class="s1">RecyclerView recyclerView;</span>
+    <span class="s0">private </span><span class="s1">NotesAdapter notesAdapter;</span>
+    <span class="s0">private </span><span class="s1">List&lt;NotesModel&gt; modelList;</span>
+
+    <span class="s0">private </span><span class="s1">String[] head = {</span><span class="s4">&quot;Video call to client team.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;Video call to team lead.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;Python practise.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;Coding my app&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;Python practise.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;Coding my app&quot;</span><span class="s1">};</span>
+
+    <span class="s0">private </span><span class="s1">String[] desc = {</span><span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">,</span>
+            <span class="s4">&quot;This is some random data for showing the description in the layout.&quot;</span><span class="s1">};</span>
+
+    <span class="s0">private </span><span class="s1">String[] time = {</span><span class="s4">&quot;11:15 am&quot;</span><span class="s1">, </span><span class="s4">&quot;12:30 am&quot;</span><span class="s1">, </span><span class="s4">&quot;2:30 pm&quot;</span><span class="s1">, </span><span class="s4">&quot;4:00 pm&quot;</span><span class="s1">, </span><span class="s4">&quot;2:30 pm&quot;</span><span class="s1">, </span><span class="s4">&quot;4:00 pm&quot;</span><span class="s1">};</span>
+
+    <span class="s0">public </span><span class="s1">HomeFragment() {</span>
+        <span class="s2">// Required empty public constructor</span>
+    <span class="s1">}</span>
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">View onCreateView(LayoutInflater inflater, ViewGroup container,</span>
+                             <span class="s1">Bundle savedInstanceState) {</span>
+        <span class="s2">// Inflate the layout for this fragment</span>
+        <span class="s1">View view = inflater.inflate(R.layout.fragment_home, container, </span><span class="s0">false</span><span class="s1">);</span>
+        <span class="s1">recyclerView = view.findViewById(R.id.recycler);</span>
+
+        <span class="s1">modelList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;();</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s1">; i &lt; head.length; i++) {</span>
+            <span class="s1">NotesModel notesModel = </span><span class="s0">new </span><span class="s1">NotesModel();</span>
+            <span class="s1">notesModel.setHead(head[i]);</span>
+            <span class="s1">notesModel.setDesc(desc[i]);</span>
+            <span class="s1">notesModel.setTime(time[i]);</span>
+            <span class="s2">//if you want to use icons for different categories you can use the following line :</span>
+            <span class="s2">//notesModel.setView(PASS ICONS HERE LIKE WORK, PERSONAL, ETC);</span>
+            <span class="s1">modelList.add(notesModel);</span>
+        <span class="s1">}</span>
+        <span class="s1">notesAdapter = </span><span class="s0">new </span><span class="s1">NotesAdapter(modelList, getContext());</span>
+        <span class="s1">recyclerView.setLayoutManager(</span><span class="s0">new </span><span class="s1">GridLayoutManager(getContext(), </span><span class="s5">2</span><span class="s1">));</span>
+        <span class="s1">recyclerView.setAdapter(notesAdapter);</span>
+
+        <span class="s1">notesAdapter.setOnRecyclerItemClick(</span><span class="s0">this</span><span class="s1">);</span>
+        <span class="s0">return </span><span class="s1">view;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onClick(</span><span class="s0">int </span><span class="s1">pos) {</span>
+        <span class="s1">Toast.makeText(getContext(), </span><span class="s4">&quot;Pos is : &quot; </span><span class="s1">+ pos, Toast.LENGTH_SHORT).show();</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

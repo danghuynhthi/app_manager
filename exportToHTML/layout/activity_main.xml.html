@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>activity_main.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808; font-style: italic;}
+.s1 { color: #174ad4;}
+.s2 { color: #080808;}
+.s3 { color: #067d17;}
+.s4 { color: #0033b3;}
+.s5 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activity_main.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s3">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s3">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s2">&lt;</span><span class="s4">androidx.coordinatorlayout.widget.CoordinatorLayout </span><span class="s1">xmlns:android</span><span class="s3">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s3">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s3">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+
+    <span class="s1">tools:context</span><span class="s3">=&quot;.MainActivity&quot;</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;</span><span class="s4">com.google.android.material.appbar.AppBarLayout</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+        <span class="s1">app:elevation</span><span class="s3">=&quot;0dp&quot;</span><span class="s2">&gt;</span>
+
+        <span class="s2">&lt;</span><span class="s4">androidx.appcompat.widget.Toolbar</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/colorPrimary&quot;</span>
+            <span class="s1">app:contentInsetEnd</span><span class="s3">=&quot;0dp&quot;</span>
+            <span class="s1">app:contentInsetStart</span><span class="s3">=&quot;0dp&quot;</span>
+            <span class="s1">app:layout_scrollFlags</span><span class="s3">=&quot;scroll|enterAlways&quot;</span><span class="s2">&gt;</span>
+
+            <span class="s2">&lt;</span><span class="s4">RelativeLayout</span>
+                <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:paddingStart</span><span class="s3">=&quot;16dp&quot;</span>
+                <span class="s1">android:paddingTop</span><span class="s3">=&quot;8dp&quot;</span>
+                <span class="s1">android:paddingEnd</span><span class="s3">=&quot;16dp&quot;</span>
+                <span class="s1">android:paddingBottom</span><span class="s3">=&quot;8dp&quot;</span><span class="s2">&gt;</span>
+
+
+
+                <span class="s2">&lt;</span><span class="s4">LinearLayout</span>
+                    <span class="s1">android:id</span><span class="s3">=&quot;@+id/profileImage&quot;</span>
+                    <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+                    <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                    <span class="s1">android:layout_alignParentStart</span><span class="s3">=&quot;true&quot;</span>
+                    <span class="s1">android:layout_alignParentLeft</span><span class="s3">=&quot;true&quot;</span>
+                    <span class="s1">android:layout_alignParentTop</span><span class="s3">=&quot;true&quot;</span>
+                    <span class="s1">android:layout_marginStart</span><span class="s3">=&quot;130dp&quot;</span>
+                    <span class="s1">android:layout_marginLeft</span><span class="s3">=&quot;130dp&quot;</span>
+                    <span class="s1">android:layout_marginTop</span><span class="s3">=&quot;7dp&quot;</span>
+                    <span class="s1">android:orientation</span><span class="s3">=&quot;vertical&quot;</span>
+                    <span class="s1">android:paddingStart</span><span class="s3">=&quot;16dp&quot;</span>
+                    <span class="s1">android:paddingEnd</span><span class="s3">=&quot;16dp&quot;</span><span class="s2">&gt;</span>
+
+
+                    <span class="s2">&lt;</span><span class="s4">TextView</span>
+                        <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+                        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                        <span class="s1">android:fontFamily</span><span class="s3">=&quot;@font/poppins_medium&quot;</span>
+                        <span class="s1">android:includeFontPadding</span><span class="s3">=&quot;false&quot;</span>
+                        <span class="s1">android:text</span><span class="s3">=&quot;Hello&quot;</span>
+                        <span class="s1">android:textSize</span><span class="s3">=&quot;18sp&quot; </span><span class="s2">/&gt;</span>
+
+                    <span class="s2">&lt;</span><span class="s4">TextView</span>
+                        <span class="s1">android:id</span><span class="s3">=&quot;@+id/txtname&quot;</span>
+                        <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+                        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                        <span class="s1">android:fontFamily</span><span class="s3">=&quot;@font/poppins_semibold&quot;</span>
+                        <span class="s1">android:includeFontPadding</span><span class="s3">=&quot;false&quot;</span>
+                        <span class="s1">android:text</span><span class="s3">=&quot;Huynh Thi&quot;</span>
+                        <span class="s1">android:textColor</span><span class="s3">=&quot;@android:color/black&quot;</span>
+                        <span class="s1">android:textSize</span><span class="s3">=&quot;22sp&quot;</span>
+                        <span class="s1">android:textStyle</span><span class="s3">=&quot;bold&quot; </span><span class="s2">/&gt;</span>
+
+
+                <span class="s2">&lt;/</span><span class="s4">LinearLayout</span><span class="s2">&gt;</span>
+
+                <span class="s2">&lt;</span><span class="s4">ImageView</span>
+                    <span class="s1">android:layout_width</span><span class="s3">=&quot;101dp&quot;</span>
+                    <span class="s1">android:layout_height</span><span class="s3">=&quot;102dp&quot;</span>
+                    <span class="s1">android:id</span><span class="s3">=&quot;@+id/idimage&quot;</span>
+                    <span class="s1">android:src</span><span class="s3">=&quot;@drawable/background1&quot;</span><span class="s2">&gt;</span>
+<span class="s5">&lt;!--                   thieu  bo tron--&gt;</span>
+
+
+                <span class="s2">&lt;/</span><span class="s4">ImageView</span><span class="s2">&gt;</span>
+
+
+            <span class="s2">&lt;/</span><span class="s4">RelativeLayout</span><span class="s2">&gt;</span>
+
+
+        <span class="s2">&lt;/</span><span class="s4">androidx.appcompat.widget.Toolbar</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;/</span><span class="s4">com.google.android.material.appbar.AppBarLayout</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;</span><span class="s4">androidx.core.widget.NestedScrollView</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:background</span><span class="s3">=&quot;@color/colorPrimary&quot;</span>
+        <span class="s1">android:fillViewport</span><span class="s3">=&quot;true&quot;</span>
+        <span class="s1">app:layout_behavior</span><span class="s3">=&quot;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&quot;</span><span class="s2">&gt;</span>
+
+        <span class="s2">&lt;</span><span class="s4">FrameLayout</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/frameLayout&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:focusable</span><span class="s3">=&quot;true&quot;</span>
+            <span class="s1">android:focusableInTouchMode</span><span class="s3">=&quot;true&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot; </span><span class="s2">/&gt;</span>
+
+    <span class="s2">&lt;/</span><span class="s4">androidx.core.widget.NestedScrollView</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;</span><span class="s4">LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_gravity</span><span class="s3">=&quot;bottom|center&quot;</span>
+        <span class="s1">android:background</span><span class="s3">=&quot;@color/colorPrimary&quot;</span>
+        <span class="s1">android:gravity</span><span class="s3">=&quot;center&quot;</span>
+        <span class="s1">app:layout_behavior</span><span class="s3">=&quot;com.google.android.material.behavior.HideBottomViewOnScrollBehavior&quot;</span><span class="s2">&gt;</span>
+
+        <span class="s2">&lt;</span><span class="s4">com.google.android.material.tabs.TabLayout</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/tabLayout&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;72dp&quot;</span>
+            <span class="s1">android:layout_gravity</span><span class="s3">=&quot;center&quot;</span>
+            <span class="s1">app:tabGravity</span><span class="s3">=&quot;center&quot;</span>
+            <span class="s1">app:tabIconTint</span><span class="s3">=&quot;@android:color/darker_gray&quot;</span>
+            <span class="s1">app:tabIndicator</span><span class="s3">=&quot;@null&quot;</span>
+            <span class="s1">app:tabMinWidth</span><span class="s3">=&quot;40dp&quot;</span>
+            <span class="s1">app:tabMode</span><span class="s3">=&quot;scrollable&quot;</span>
+            <span class="s1">app:tabRippleColor</span><span class="s3">=&quot;@null&quot;</span><span class="s2">&gt;</span>
+
+            <span class="s2">&lt;</span><span class="s4">com.google.android.material.tabs.TabItem</span>
+                <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:icon</span><span class="s3">=&quot;@drawable/ic_home&quot; </span><span class="s2">/&gt;</span>
+
+<span class="s5">&lt;!--            &lt;com.google.android.material.tabs.TabItem--&gt;</span>
+<span class="s5">&lt;!--                android:layout_width=&quot;wrap_content&quot;--&gt;</span>
+<span class="s5">&lt;!--                android:layout_height=&quot;wrap_content&quot;--&gt;</span>
+<span class="s5">&lt;!--                android:icon=&quot;@drawable/ic_categories&quot; /&gt;--&gt;</span>
+
+<span class="s5">&lt;!--            &lt;com.google.android.material.tabs.TabItem--&gt;</span>
+<span class="s5">&lt;!--                android:layout_width=&quot;wrap_content&quot;--&gt;</span>
+<span class="s5">&lt;!--                android:layout_height=&quot;wrap_content&quot;--&gt;</span>
+<span class="s5">&lt;!--                android:icon=&quot;@drawable/ic_settings&quot; /&gt;--&gt;</span>
+
+            <span class="s2">&lt;</span><span class="s4">com.google.android.material.tabs.TabItem</span>
+                <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s3">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:icon</span><span class="s3">=&quot;@drawable/ic_person&quot; </span><span class="s2">/&gt;</span>
+
+        <span class="s2">&lt;/</span><span class="s4">com.google.android.material.tabs.TabLayout</span><span class="s2">&gt;</span>
+
+    <span class="s2">&lt;/</span><span class="s4">LinearLayout</span><span class="s2">&gt;</span>
+
+<span class="s2">&lt;/</span><span class="s4">androidx.coordinatorlayout.widget.CoordinatorLayout</span><span class="s2">&gt;</span></pre>
+</body>
+</html>
